@@ -19,16 +19,4 @@ export default StyleSheet.create({
         fontFamily: fonts.text500,
         textAlign: 'center'
     },
-    iconWrapper: {
-        width: 50,
-        height: 56,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRightWidth: 1,
-        borderColor: colors.line
-    },
-    icon: {
-        width: 25,
-        height: 18
-    }
 })

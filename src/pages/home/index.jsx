@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
-  Text,
-  Image,
   View,
   FlatList,
 } from 'react-native';
+
+import { useNavigation } from '@react-navigation/core';
 
 import styles from './styles';
 
@@ -14,16 +14,24 @@ import {
   CategorySelect,
   ListHeader,
   Appointment,
-  ListDivider
+  ListDivider,
+  Background
 } from '../../components';
 
 export default function App() {
   const [category, setCategory] = useState('');
 
+  const navigation = useNavigation();
   function handleCategorySelect(categoryId) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
+  function handleAppointmentDetails(data) {
+    navigation.navigate('AppointmentDetails', data)
+  }
+  function handleAppointmentCreate(data) {
+    navigation.navigate('AppointmentCreate', data)
+  }
   const appointments = [
     {
       id: 1,
@@ -45,29 +53,30 @@ export default function App() {
         icon: null,
         owner: true
       },
-      category: '1',
+      category: '2',
       date: '22/06 as 54:90',
       description: 'é hoje que vamos chegar ao challenger sem perder uma partida da md10'
     }
   ]
   return (
-    <View>
+    <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate}/>
       </View>
       <CategorySelect categorySelected={category} setCategory={handleCategorySelect} />
       <View style={styles.content}>
         <ListHeader title='Partidas Agendadas' subtitle='Total 6' />
         <FlatList
           data={appointments}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id.toString()}
           renderItem={({ item }) => (
             <Appointment
               guild={item.guild}
               category={item.category}
               description={item.description}
               date={item.date}
+              onPress={handleAppointmentDetails}
             />
           )}
           ItemSeparatorComponent={() => (
@@ -77,6 +86,6 @@ export default function App() {
           showsVerticalScrollIndicator={false}
         />
       </View>
-    </View>
+    </Background>
   )
 }

@@ -7,9 +7,8 @@ import {
 
 import styles from './styles';
 import IllustrationImg from '../../assets/illustration.png';
-import { ButtonIcon } from '../../components';
+import { ButtonIcon, Background } from '../../components';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const navigation = useNavigation();
@@ -18,6 +17,7 @@ export default function App() {
     navigation.navigate('Home')
   }
   return (
+    <Background>
     <View style={styles.container}>
       <Image
         source={IllustrationImg}
@@ -37,6 +37,7 @@ export default function App() {
           <ButtonIcon title='Entre com discord' onPress={handleSingIn} />
       </View>
     </View>
+    </Background>
   );
 }
 

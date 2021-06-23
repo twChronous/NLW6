@@ -3,10 +3,11 @@ import colors from '../../styles/colors';
 
 export default StyleSheet.create({
     container: {
-        width: '80%',
+        width: '78%',
         height: 1,
         backgroundColor: colors.secondary40,
-        marginVertical: 21,
+        marginTop: 2,
+        marginVertical: 31,
         alignSelf: 'flex-end'
     }
 })
