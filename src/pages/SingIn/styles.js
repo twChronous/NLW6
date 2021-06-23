@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+import Fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
 export default StyleSheet.create({
@@ -7,7 +7,6 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.background,
     },
     image: {
         width: '100%',
@@ -21,12 +20,16 @@ export default StyleSheet.create({
         color: colors.heading,
         textAlign: 'center',
         fontSize: 40,
-        marginBottom: -40
+        marginBottom: -40,
+        fontFamily: Fonts.title700,
+        lineHeight: 40
     },
     subtitle: {
         color: colors.heading,
         fontSize: 15,
         textAlign: 'center',
-        marginBottom: 30
+        marginBottom: 30,
+        fontFamily: Fonts.title500,
+        lineHeight: 25
     }
 })
