@@ -6,8 +6,7 @@ import colors from '../../styles/colors';
 export default StyleSheet.create({
     banner: {
         width: '100%',
-        height: 180, 
-        marginBottom: 30     
+        height: 180,   
     },
     bannerContent: {
         flex: 1,
@@ -23,7 +22,8 @@ export default StyleSheet.create({
     subtitle: {
         fontSize: 13,
         fontFamily: Fonts.text400,
-        color: colors.heading
+        color: colors.heading,
+        lineHeight: 21
     }, 
     members: {
         marginLeft: 24,

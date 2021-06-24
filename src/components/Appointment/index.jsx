@@ -8,6 +8,7 @@ import Calendar from '../../assets/calendar.svg';
 
 import styles from './styles';
 import colors from '../../styles/colors';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Appointment({ guild, category, description, date, ...rest }) {
     const [Category] = categories.filter(item => item.id === category);
@@ -15,7 +16,12 @@ export default function Appointment({ guild, category, description, date, ...res
     return (
         <RectButton {...rest}>
             <View style={styles.container}>
+                <LinearGradient
+                style={styles.guildIconContainer}
+                colors={[colors.secondary50, colors.secondary70]}
+                >
                 <GuildIcon />
+                </LinearGradient>
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Text style={styles.title}>

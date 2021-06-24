@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Home, SingIn, AppointmentDetails, AppointmentCreate } from '../pages';
+import { Home, AppointmentDetails, AppointmentCreate } from '../pages';
 import colors from '../styles/colors';
 
 const { Navigator, Screen } = createStackNavigator();
@@ -16,10 +16,6 @@ export function AuthRoutes() {
                 }
             }}
         >
-            <Screen
-                name="SingIn"
-                component={SingIn}
-            />
             <Screen
                 name="Home"
                 component={Home}

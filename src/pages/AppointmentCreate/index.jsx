@@ -20,6 +20,7 @@ import {
     SmallInput,
     TextArea,
     Button,
+    Background
 } from '../../components';
 
 import Guilds from '../Guilds'
@@ -32,21 +33,25 @@ export default function AppointmentDetails() {
 
 
     function handleOpenGuilds() {
-        setOpenGuildsModal(true)
+        setOpenGuildsModal(true);
+    }
+    function handleCloseGuilds() {
+        setOpenGuildsModal(false);
     }
     function handleGuildSelect(guildSelect) {
         setGuild(guildSelect)
         setOpenGuildsModal(false)
     }
     function handleCategorySelect(categoryId) {
-        categoryId === category ? setCategory('') : setCategory(categoryId);
+        setCategory(categoryId);
     }
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}
         >
-            <ScrollView>
+            <Background>
+                <ScrollView>
                     <Header
                         title='Agendar Partida'
                     />
@@ -71,14 +76,14 @@ export default function AppointmentDetails() {
                             <View style={styles.select}>
                                 {
                                     guild.icon
-                                    ? <GuildIcon /> 
-                                    : <View style={styles.image} />
+                                        ? <GuildIcon />
+                                        : <View style={styles.image} />
                                 }
 
                                 <View style={styles.selectBody}>
                                     <Text style={styles.label}>
-                                       { guild ? guild.name : 'Selecione um servidor' }
-                            </Text>
+                                        {guild.name ? guild.name : 'Selecione um servidor'}
+                                    </Text>
                                 </View>
                                 <Feather
                                     name='chevron-right'
@@ -90,7 +95,9 @@ export default function AppointmentDetails() {
 
                         <View style={styles.field}>
                             <View>
-                                <Text style={styles.label}>
+                                <Text style={[styles.label, {
+                                    marginBottom: 12
+                                }]}>
                                     Dia e Mes
                         </Text>
                                 <View style={styles.column}>
@@ -102,7 +109,9 @@ export default function AppointmentDetails() {
                                 </View>
                             </View>
                             <View>
-                                <Text style={styles.label}>
+                                <Text style={[styles.label, {
+                                    marginBottom: 12
+                                }]}>
                                     Hora e Minuto
                         </Text>
                                 <View style={styles.column}>
@@ -131,13 +140,14 @@ export default function AppointmentDetails() {
                             autoCorrect={false}
                         />
 
-                        <View style={styles.footer}> 
-                            <Button title='agendar'/>
+                        <View style={styles.footer}>
+                            <Button title='agendar' />
                         </View>
                     </View>
-            </ScrollView>
-            <ModalView visible={openGuildsModal}>
-                <Guilds handleGuildSelected={handleGuildSelect}/>
+                </ScrollView>
+            </Background>
+            <ModalView visible={openGuildsModal} closeModal={handleCloseGuilds}>
+                <Guilds handleGuildSelected={handleGuildSelect} />
             </ModalView>
         </KeyboardAvoidingView>
     )

@@ -10,7 +10,11 @@ export default StyleSheet.create({
         color: colors.heading,
         borderRadius: 8,
         fontFamily: fonts.text400,
-        marginRight: 4,
-        textAlign: 'center'
+        marginRight: 4,     
+        borderColor: colors.secondary50,
+        borderWidth: 1,
+        paddingHorizontal: 16,
+        paddingTop: 16,
+        textAlignVertical: 'top'
     }
 })

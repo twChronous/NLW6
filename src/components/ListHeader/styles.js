@@ -9,6 +9,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 24,
+        marginTop: 27,
     },
     title: {
         fontFamily: fonts.title700,

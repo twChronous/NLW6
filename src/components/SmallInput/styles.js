@@ -11,6 +11,8 @@ export default StyleSheet.create({
         borderRadius: 8,
         fontFamily: fonts.text400,
         marginRight: 4,
-        textAlign: 'center'
+        textAlign: 'center',
+        borderColor: colors.secondary50,
+        borderWidth: 1
     }
 })

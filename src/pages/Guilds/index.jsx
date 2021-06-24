@@ -17,7 +17,43 @@ export default function GuildIcon({ handleGuildSelected, ...rest }) {
             name: 'Lendarios',
             icon: null,
             owner: true
-        }
+        },
+        {
+            id: '2',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
+        {
+            id: '3',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
+        {
+            id: '4',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
+        {
+            id: '5',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
+        {
+            id: '6',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
+        {
+            id: '7',
+            name: 'Lendarios',
+            icon: null,
+            owner: true
+        },
     ]
     return (
         <View>
@@ -32,8 +68,10 @@ export default function GuildIcon({ handleGuildSelected, ...rest }) {
                         onPress={() => handleGuildSelected(item)}
                     />
                 )}
-                ItemSeparatorComponent={() => <ListDivider />}
                 showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ paddingBottom: 68, paddingTop: 100 }}
+                ItemSeparatorComponent={() => <ListDivider isCenter/>}
+                ListHeaderComponent={() => <ListDivider isCenter />}
                 style={styles.guilds}
             />
         </View>

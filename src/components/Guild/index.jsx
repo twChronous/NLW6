@@ -30,12 +30,12 @@ export default function Guild({ name, icon, owner, ...rest }) {
                         {owner ? 'Administrador' : 'Convidado'}
                     </Text>
                 </View>
+            </View>
                 <Feather
                     name='chevron-right'
                     size={24}
                     color={colors.heading}
                 />
-            </View>
         </TouchableOpacity>
     )
 }
